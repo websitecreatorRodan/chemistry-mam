@@ -1,0 +1,258 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Happy Birthday Dear Sunitha Mam! 🎉</title>  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <!-- Tailwind CSS CDN -->  
+    <script src="https://cdn.tailwindcss.com"></script>  
+    <!-- Google Fonts -->  
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">  
+    <!-- Tailwind Config -->  
+    <script>  
+        tailwind.config = {  
+            theme: {  
+                extend: {  
+                    fontFamily: {  
+                        'great-vibes': ['"Great Vibes"', 'cursive'],  
+                        'montserrat': ['Montserrat', 'sans-serif'],  
+                    },  
+                    animation: {  
+                        'float': 'float 3s ease-in-out infinite',  
+                        'bounce-slow': 'bounce 2s infinite',  
+                    },  
+                    keyframes: {  
+                        float: {  
+                            '0%, 100%': { transform: 'translateY(0)' },  
+                            '50%': { transform: 'translateY(-20px)' },  
+                        },  
+                    },  
+                },  
+            },  
+        }  
+    </script>  
+    <!-- Custom Styles -->  
+    <style>  
+        body {  
+            background: linear-gradient(120deg, #ff7f50, #ffda79, #6a5acd, #ff6ad5);  
+            background-size: 300% 300%;  
+            animation: gradientBG 15s ease infinite;  
+        }  
+        @keyframes gradientBG {  
+            0% { background-position: 0% 50%; }  
+            50% { background-position: 100% 50%; }  
+            100% { background-position: 0% 50%; }  
+        }  
+        .gradient-text {  
+            background: linear-gradient(90deg, #ff7f50, #ffda79, #6a5acd, #ff6ad5);  
+            background-size: 200% auto;  
+            -webkit-background-clip: text;  
+            background-clip: text;  
+            color: transparent;  
+            animation: gradientText 5s linear infinite;  
+        }  
+        @keyframes gradientText {  
+            to {  
+                background-position: -200% center;  
+            }  
+        }  
+        .confetti {  
+            position: fixed;  
+            top: 0;  
+            left: 0;  
+            width: 100%;  
+            height: 0;  
+            pointer-events: none;  
+            overflow: visible;  
+            z-index: 50;  
+        }  
+        /* Additional styling for colorful sections */  
+        .card-gradient-1 {  
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);  
+        }  
+        .card-gradient-2 {  
+            background: linear-gradient(to right, #2193b0, #6dd5ed);  
+        }  
+    </style>  
+</head>  
+<body class="min-h-screen flex flex-col items-center justify-center font-montserrat text-white">  
+    <!-- Confetti Canvas -->  
+    <canvas id="confetti-canvas" class="confetti"></canvas>  
+
+    <!-- Main Content -->  
+    <main class="container mx-auto px-4 py-8 max-w-4xl">  
+        <div class="bg-white bg-opacity-80 backdrop-blur-md rounded-2xl shadow-xl p-8">  
+            <!-- Header Section -->  
+            <header class="text-center mb-12">  
+                <h1 class="font-great-vibes text-6xl md:text-7xl gradient-text mb-4">  
+                    Happy Birthday  
+                </h1>  
+                <h2 class="text-3xl md:text-4xl text-gray-800 font-semibold">  
+                    Dear Sunitha Mam 🎉  
+                </h2>  
+            </header>  
+
+            <!-- Main Image -->  
+            <div class="relative mb-12 group">  
+                <img src="2.png" alt="Sunitha Mam"   
+                     class="w-full h-64 md:h-80 object-cover rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-105">  
+                <div class="absolute inset-0 flex items-center justify-center">  
+                    <span class="text-6xl animate-bounce-slow"></span>  
+                </div>  
+            </div>  
+
+            <!-- Audio Player -->  
+            <div class="text-center mb-12">  
+                <div class="flex items-center justify-center">  
+                    <div class="bg-white bg-opacity-80 backdrop-blur-md rounded-full p-4 shadow-md flex items-center space-x-4">  
+                        <button id="play-pause" class="text-2xl text-gray-800 focus:outline-none">  
+                            ▶️  
+                        </button>  
+                        <div class="flex-1">  
+                            <div id="progress-container" class="w-full bg-gray-300 rounded-full h-2 cursor-pointer">  
+                                <div id="progress-bar" class="bg-gradient-to-r from-green-400 to-blue-500 h-2 rounded-full" style="width: 0%;"></div>  
+                            </div>  
+                        </div>  
+                        <span id="current-time" class="text-sm text-gray-800">0:00</span> / <span id="duration" class="text-sm text-gray-800">0:00</span>  
+                    </div>  
+                </div>  
+                <!-- Hidden audio element -->  
+                <audio id="audio-player">  
+                    <source src="ffff.MP3" type="audio/mpeg">  
+                    Your browser does not support the audio element.  
+                </audio>  
+            </div>  
+
+            <!-- Appreciation Message -->  
+            <div class="text-center mb-12">  
+                <p class="text-xl text-gray-800 leading-relaxed">  
+                    On this special day, we celebrate you, our inspiring teacher who lights the path of knowledge with wisdom and kindness. ✨  
+                </p>  
+            </div>  
+
+            <!-- Messages Grid -->  
+            <div class="grid md:grid-cols-2 gap-6 mb-12">  
+                <div class="p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 card-gradient-1 text-white">  
+                    <h3 class="text-xl font-semibold mb-3">With Heartfelt Gratitude 💐</h3>  
+                    <p>  
+                        Thank you for your dedication, patience, and for inspiring us to reach for the stars. Your lessons go beyond the classroom and touch our lives deeply.  
+                    </p>  
+                </div>  
+                <div class="p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 card-gradient-2 text-white">  
+                    <h3 class="text-xl font-semibold mb-3">Warm Wishes 🎈</h3>  
+                    <p>  
+                        May your birthday be as wonderful as you are, filled with joy, laughter, and the appreciation you deserve. Happy Birthday!  
+                    </p>  
+                </div>  
+            </div>  
+
+            <!-- Interactive Elements -->  
+            <div class="text-center space-y-6">  
+                <div class="flex justify-center gap-4 text-4xl">  
+                    <span class="cursor-pointer animate-float hover:scale-125 transition-transform duration-300">🎉</span>  
+                    <span class="cursor-pointer animate-float hover:scale-125 transition-transform duration-300">🎂</span>  
+                    <span class="cursor-pointer animate-float hover:scale-125 transition-transform duration-300">🎁</span>  
+                    <span class="cursor-pointer animate-float hover:scale-125 transition-transform duration-300">✨</span>  
+                </div>  
+                
+                <button onclick="launchConfetti()"   
+                        class="bg-gradient-to-r from-green-400 to-blue-500 text-white px-8 py-3 rounded-full hover:from-green-500 hover:to-blue-600 transition-colors duration-300 shadow-md hover:shadow-lg">  
+                    Celebrate 🎊  
+                </button>  
+            </div>  
+        </div>  
+    </main>  
+
+    <!-- Confetti Script -->  
+    <script>  
+        function launchConfetti() {  
+            const duration = 5 * 1000;  
+            const animationEnd = Date.now() + duration;  
+            const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 };  
+
+            function randomInRange(min, max) {  
+                return Math.random() * (max - min) + min;  
+            }  
+
+            const interval = setInterval(function() {  
+                const timeLeft = animationEnd - Date.now();  
+
+                if (timeLeft <= 0) {  
+                    return clearInterval(interval);  
+                }  
+
+                const particleCount = 50 * (timeLeft / duration);  
+                confetti(Object.assign({}, defaults, {   
+                    particleCount,   
+                    origin: { x: randomInRange(0, 1), y: Math.random() - 0.2 }   
+                }));  
+            }, 250);  
+        }  
+
+        // Custom Audio Player Script  
+        const audioPlayer = document.getElementById('audio-player');  
+        const playPauseBtn = document.getElementById('play-pause');  
+        const progressContainer = document.getElementById('progress-container');  
+        const progressBar = document.getElementById('progress-bar');  
+        const currentTimeElem = document.getElementById('current-time');  
+        const durationElem = document.getElementById('duration');  
+
+        let isPlaying = false;  
+
+        function playPauseAudio() {  
+            if (isPlaying) {  
+                audioPlayer.pause();  
+                playPauseBtn.textContent = '▶️';  
+            } else {  
+                audioPlayer.play();  
+                playPauseBtn.textContent = '⏸️';  
+            }  
+        }  
+
+        playPauseBtn.addEventListener('click', playPauseAudio);  
+
+        audioPlayer.addEventListener('play', () => {  
+            isPlaying = true;  
+            playPauseBtn.textContent = '⏸️';  
+        });  
+
+        audioPlayer.addEventListener('pause', () => {  
+            isPlaying = false;  
+            playPauseBtn.textContent = '▶️';  
+        });  
+
+        audioPlayer.addEventListener('timeupdate', updateProgress);  
+        progressContainer.addEventListener('click', setProgress);  
+
+        audioPlayer.addEventListener('loadedmetadata', () => {  
+            durationElem.textContent = formatTime(audioPlayer.duration);  
+        });  
+
+        function updateProgress() {  
+            const { currentTime, duration } = audioPlayer;  
+            const percent = (currentTime / duration) * 100;  
+            progressBar.style.width = percent + '%';  
+            currentTimeElem.textContent = formatTime(currentTime);  
+        }  
+
+        function setProgress(e) {  
+            const width = this.clientWidth;  
+            const clickX = e.offsetX;  
+            const duration = audioPlayer.duration;  
+
+            audioPlayer.currentTime = (clickX / width) * duration;  
+        }  
+
+        function formatTime(seconds) {  
+            const minutes = Math.floor(seconds / 60);  
+            let secs = Math.floor(seconds % 60);  
+            if (secs < 10) {  
+                secs = '0' + secs;  
+            }  
+            return minutes + ':' + secs;  
+        }  
+    </script>  
+    <!-- Include Confetti Library -->  
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>  
+</body>  
+</html>  
